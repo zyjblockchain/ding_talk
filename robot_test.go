@@ -1,9 +1,11 @@
-# ding_talk
-dingding 消息推送接口封装
+package ding_robot
 
-##### example
-````$xslt
-var webHook = "https://oapi.dingtalk.com/robot/send?access_token=****"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
+
+var webHook = "https://oapi.dingtalk.com/robot/send?access_token=******"
 
 func TestRobot_SendText(t *testing.T) {
 	robot := NewRobot(webHook)
@@ -19,5 +21,3 @@ func TestRobot_SendMarkdown(t *testing.T) {
 	err := robot.SendMarkdown(markdownText, nil, true)
 	assert.NoError(t, err)
 }
-````
-
